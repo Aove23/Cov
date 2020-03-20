@@ -10,4 +10,7 @@
     background: rgba(0, 0, 0, 0.69);
     top: 0px;
    overflow-y: scroll;
+     z-index: 100000000000;
   }
+
+ 
