@@ -2,15 +2,15 @@
 const JSON_CLARIN = "apiArgentina.php";
 
 function initCifras() {
-    
+
 momentoActual = new Date()
     hora = momentoActual.getHours()
     minuto = momentoActual.getMinutes()
     segundo = momentoActual.getSeconds()
 
     horaImprimible = hora + " : " + minuto + " : " + segundo
-    
-    
+
+
 
   fetch(JSON_CLARIN)
     .then(function(response) {
@@ -18,7 +18,7 @@ momentoActual = new Date()
     })
     .then(function(myJson) {
      console.log(myJson);
-     
+
           document.getElementById('numbers').innerHTML = `<ul class="numbers__argentina">
           <li>
             <p>${myJson.casos} <span>Confirmados</span></p>
@@ -34,7 +34,7 @@ momentoActual = new Date()
     });
 }
 
- 
+
 setInterval(function(){ initCifras(); }, 1000);
 
 
@@ -61,7 +61,7 @@ function showPosition(position)
               alert(results[0].address_components[1].types.administrative_area_level_1);
               var longname = results[0].address_components[i].long_name;
               var type = results[0].address_components[i].types;
-              
+
               if (type.indexOf("administrative_area_level_1") != -1)
               {
                 region = longname;
@@ -76,4 +76,15 @@ function showPosition(position)
       });
       alert("ffsdsfd"+region + country);
     }
-    
+
+
+
+    function modalScript(title,data){
+  var mdl = document.getElementById('mdl');
+  mdl.classList.add("d-block");
+  document.querySelector('#mdl h3').innerHTML = title;
+  document.querySelector('#mdl p').innerHTML = data;
+}
+function modalScriptClose(){
+  document.getElementById('mdl').classList.remove("d-block");
+}
