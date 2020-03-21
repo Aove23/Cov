@@ -64,6 +64,10 @@
                 </div>
 
                 <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Img" aria-label="Info" name="img">
+                </div>
+
+                <div class="form-group">
                     <label class="font-weight-bold text-white" for="exampleInputEmail1">Modal</label>
                     <input type="text" class="form-control" placeholder="Titulo" aria-label="Titulo" name="titulo2">
                 </div>
