@@ -13,9 +13,9 @@
 
 }
 #cardinfo{
-  max-height: 300px;
-  overflow-y: scroll;
-  
+  /* max-height: 700px;
+  overflow-y: scroll; */
+
 }
 .navbar a{
 color: #5D6D7E;
