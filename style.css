@@ -12,7 +12,11 @@
       border-bottom: 2px solid #e5e5e5;
 
 }
-
+#cardinfo{
+  max-height: 300px;
+  overflow-y: scroll;
+  
+}
 .navbar a{
 color: #5D6D7E;
 font-weight: 700;
@@ -94,7 +98,7 @@ font-weight: 700;
 
         left: 30px;
         top: 46px; */
-    } 
+    }
 
     #mdl{
     width: 100%;
