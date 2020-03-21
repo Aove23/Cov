@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
         <link rel="stylesheet" href="style.css"  >
+        <link rel="stylesheet" href="style2.css"  >
         <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600&display=swap" rel="stylesheet">
 
     <title>Medidas y Supervivencia</title>
@@ -25,6 +26,19 @@
       </div>
     </div>
 
+    <div id="nav-cel" class="d-md-none">
+      <div class="nav-bar-cel ">
+        <ul class="d-flex  justify-content-center">
+          <a  href="#presentacion"><li>🏡</li></a>
+          <a  href="#cardd"><li> 🗍 </li></a>
+          <a  href="#Preguntas"><li>❓ </li></a>
+        <a  href="#numbers">  <li>☏ </li></a>
+          <a  href="#map"><li> 🗺</li></a>
+        </ul>
+      </div>
+    </div>
+
+
       <!-- Navigation -->
       <nav class="navbar      ">
 
@@ -36,7 +50,7 @@
             Argentina Previene
           </a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-             ☰  ☏
+             ☰
           </button>
           <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
@@ -48,9 +62,7 @@
               <li class="nav-item">
                 <a class="nav-link" href="#">Acerca De</a>
               </li>
-              <li class="nav-item" onclick="modalScript('weew',tel)"  >
-                ☏
-              </li>
+
 
             </ul>
           </div>
@@ -87,49 +99,38 @@
           </div>
         </div>
 
-        <div class="card mt-2 bg-ligth"  >
-          <div class="card-body">
-            No mas paranoia, informacion falsa y descentralizada, aqui esta todo condensado y actualizado con lo esencial a tu alcance. <br>
-            Desconfiá de —y no difundas— rumores, mensajes y audios de Whatsapp provenientes de supuestas autoridades en la materia que difundan información que no pueda ser verificada.
-          </div>
-        </div>
-        <div class="card mt-2 bg-ligth"  >
-          <div class="card-body d-flex flex-row">
-            <img class="mr-2 float-left" src="imgs/star.svg" alt="" width="3%">:
-            <p class="float-right">Publico general, Obligatorio para todos!</p>
-            <!-- <img class="mr-2 " src="imgs/ancianos.svg" alt="" width="3%">:
-            <p>Mayores de 60 años, embarazadas y personas con patologías crónicas</p> <br>
-            <img class="mr-2 " src="imgs/sintomas.svg" alt="" width="3%">:
-            <p>Presentan sintomas relacionados al COVID-19</p>
-            <img class="mr-2 " src="imgs/recomendaciones.svg" alt="" width="3%">:
-            <p>Recomendaciones</p> -->
-          </div>
-        </div>
+            <div class="card mt-2 bg-ligth"  >
+              <div class="card-body">
+                No mas paranoia, informacion falsa y descentralizada, aqui esta todo condensado y actualizado con lo esencial a tu alcance. <br>
+                Desconfiá de —y no difundas— rumores, mensajes y audios de Whatsapp provenientes de supuestas autoridades en la materia que difundan información que no pueda ser verificada.
+              </div>
+            </div>
 
-            <h2 class="my-4">Guía de supervivencia
-              <!-- <small>Secondary Text</small> -->
+            <h2 id="cardd" class="my-4">Guía de supervivencia
             </h2>
+
 
             <div class="row" id="cardinfo">
 
               </div>
 
-
-                <div class="row my-5">
+                <div id="map" class="row my-5">
                   <div class="col-12">
                       <img class="img-fluid" src="imgs/banner.png" alt="">
                   </div>
                 </div>
 
+
                 <iframe src="https://public.flourish.studio/visualisation/1608973/embed" frameborder="0" scrolling="no" style="width:100%;height:600px;"></iframe>
 
 
-                <div class="cabecera d-flex flex-row py-4">
+                <div class="cabecera d-flex flex-row py-4" id="Preguntas">
                   <img src="imgs/triangle.svg" alt="" width="8%">
                   <h2 class="my-4 ml-2">Preguntas y Respuestas Claves
                     <!-- <small>Secondary Text</small> -->
                   </h2>
                 </div>
+
 
             <div class="mb-3" id="accordion">
               <div class="card tarj">
@@ -222,7 +223,7 @@
                 </ul>
                 <p class="font-weight-bold">Para denunciar a quienes violen la cuarentena, <span class="text-info">comunicate con el Ministerio de Seguridad al número gratuito 134</span>  desde cualquier lugar del país.</p>
               </div>
-              
+
 
               <h5 class="card-header">¿Qué le hace el coronavirus al cuerpo?</h5>
               <div class="card-body">

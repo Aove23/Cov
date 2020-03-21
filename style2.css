@@ -1,0 +1,28 @@
+#nav-cel{
+  background: red;
+  position: fixed;
+  width: 100%;
+  bottom: 0px;
+  background-color: #fff;
+  border-top: 2px solid #e5e5e5;
+  margin: 0px;
+  padding: 0px;
+  z-index: 100000;
+}
+
+
+#nav-cel ul{
+  width: 80%;
+  padding: 0px;
+  margin: auto;
+
+  list-style: none;
+
+}
+#nav-cel ul li{
+  font-size: 30px;
+  width: 60px;
+}
+html {
+  scroll-behavior: smooth;
+}
