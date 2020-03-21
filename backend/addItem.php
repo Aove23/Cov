@@ -12,6 +12,7 @@ if( isset($_POST)){
   fwrite($fh, json_encode($datos,JSON_UNESCAPED_UNICODE));
   fclose($fh);
   echo json_encode("true");
+    header("Location:dash.php");
 }
 else {
   echo json_encode("false");
