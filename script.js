@@ -20,10 +20,11 @@ var tel = `            <!-- Categories Widget -->
               </div>
             </div>`;
 
-            
+
 const JSON_CLARIN = "apiArgentina.php";
 cardPintar();
-
+initCifras();
+traer();
 document.getElementById('telefonos').innerHTML = tel;
 
 setInterval(function(){ initCifras(); }, 100000);
@@ -118,22 +119,73 @@ function modalScriptClose(){
 
 
 
+
 function cardPintar(){
   data= document.getElementById('cardinfo');
 
-  for (var i = 0; i <9; i++) {
-    data.innerHTML+=`<div class="col-md-4 mb-2">
-                    <div class="card text-center h-100 ">
-                      <div class="card-body">
-                        <div class="contenedor d-flex flex-row-reverse bd-highlight">
-                          <img class=" bd-highlight" src="imgs/star.svg" alt="" width="15%">
-                        </div>
-                        <img class="mb-2" src="imgs/question.svg" alt="" width="20%">
-                        <h5 class="card-title">Lávese las manos mas de 1 minuto  frecuentemente</h5>
-                        <p class="card-text"></p>
-                        <span class="btn btn-primary btn-sm"  onclick="modalScript('weew','3333333')" >More Info</span>
-                      </div>
-                    </div>
-                  </div>`;
-  }
+  fetch('backend/card.json')
+      .then( res => res.json() )
+      .then( datos => {
+        for(let valor in datos){
+          console.log(valor);
+          data.innerHTML+=`<div class="col-md-4 mb-2">
+                          <div class="card text-center h-100 ">
+                            <div class="card-body">
+                              <div class="contenedor d-flex flex-row-reverse bd-highlight">
+                                <img class=" bd-highlight" src="imgs/star.svg" alt="" width="15%">
+                              </div>
+                              <img class="mb-2" src="imgs/question.svg" alt="" width="20%">
+                              <h5 class="card-title">${datos[valor].titulo1}</h5>
+                              <p class="card-text">${datos[valor].info1}</p>
+                              <span class="btn btn-primary btn-sm"  onclick="modalScript('${datos[valor].titulo2}','${datos[valor].info2}')" >More Info</span>
+                            </div>
+                          </div>
+                        </div>`;
+
+        }
+
+      })
+
+
+
+
 }
+
+
+const accordion = document.querySelector('#accordion');
+
+    function traer(){
+        fetch('backend/collapse.json')
+            .then( res => res.json() )
+            .then( datos => {
+                collapse(datos);
+            })
+    }
+
+    function collapse(datos){
+        console.log(datos)
+        accordion.innerHTML = ''
+        i=0;
+        for(let valor in datos){
+          i++;
+            // console.log(valor.titulo)
+            accordion.innerHTML += `
+          <div class="card tarj">
+            <div class="card-header cabecera" id="heading${i}">
+              <h5 class="mb-0">
+                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse${i}" aria-expanded="false" aria-controls="collapse${i}">
+              ${datos[valor].titulo3}
+                </button>
+              </h5>
+            </div>
+            <div id="collapse${i}" class="collapse" aria-labelledby="heading${i}" data-parent="#accordion">
+              <div class="card-body cuerpo text-white">
+                ${datos[valor].info3}
+              </div>
+            </div>
+          </div>
+
+
+        `
+        }
+    }

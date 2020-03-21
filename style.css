@@ -4,8 +4,6 @@
 
 *{
 font-family: 'M PLUS Rounded 1c', sans-serif;
-
-
 }
 
 
@@ -112,5 +110,5 @@ font-weight: 700;
   #telefonos ul{
     max-height:  200px;
     overflow-y: scroll;
-    
+
   }

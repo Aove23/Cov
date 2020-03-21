@@ -11,24 +11,26 @@ const accordion = document.querySelector('#accordion');
     function collapse(datos){
         console.log(datos)
         accordion.innerHTML = ''
-        for(let valor of datos){
+        i=0;
+        for(let valor in datos){
+          i++;
             // console.log(valor.titulo)
             accordion.innerHTML += `
-            <div class="card tarj">
-            <div class="card-header cabecera" id="headingOne">
+          <div class="card tarj">
+            <div class="card-header cabecera" id="heading${i}">
               <h5 class="mb-0">
-                <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                  ${ valor.titulo }
+                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse${i}" aria-expanded="false" aria-controls="collapse${i}">
+              ${datos[valor].titulo3}
                 </button>
               </h5>
             </div>
-
-            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
-              <div class="card-body cuerpo">
-                ${ valor.info }
+            <div id="collapse${i}" class="collapse" aria-labelledby="heading${i}" data-parent="#accordion">
+              <div class="card-body cuerpo text-white">
+                ${datos[valor].info3}
               </div>
             </div>
           </div>
+
 
         `
         }
