@@ -93,17 +93,17 @@ function cardPintar(){
       .then( res => res.json() )
       .then( datos => {
         for(let valor in datos){
-          console.log(valor);
+          console.log(datos[valor]);
           data.innerHTML+=`<div class="col-md-4 mb-2">
                           <div class="card text-center h-100 ">
                             <div class="card-body">
                               <div class="contenedor d-flex flex-row-reverse bd-highlight">
-                                <img class=" bd-highlight" src="imgs/star.svg" alt="" width="15%">
+                                <img class=" bd-highlight" src="imgs/${datos[valor].img}" alt="" width="15%">
                               </div>
                               <img class="mb-2" src="imgs/question.svg" alt="" width="20%">
                               <h5 class="card-title">${datos[valor].titulo1}</h5>
                               <p class="card-text">${datos[valor].info1}</p>
-                              <span class="btn btn-primary btn-sm"  onclick="modalScript('${datos[valor].titulo2}','${datos[valor].info2}')" >More Info</span>
+                              <span class="btn btn-primary btn-sm"  onclick="modalScript('${datos[valor].titulo2}','${datos[valor].info2}')" >Mas Info</span>
                             </div>
                           </div>
                         </div>`;
