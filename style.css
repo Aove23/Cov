@@ -40,7 +40,7 @@ font-weight: 700;
     #comentarios .tarj,.cabecera{
         background-color: transparent !important;
         border:  none !important;
-        padding: 0 !important;
+        padding: 0 40px 0 0!important;
         margin-bottom: 20px;
     }
 
